@@ -203,6 +203,9 @@ expresion  ::=
  | IDENTIFICADOR:a PARIZQ expresiones:b PARDER {:RESULT=new LlamadaFuncion(a,b);:}
  | IDENTIFICADOR:a PARIZQ PARDER               {:RESULT=new LlamadaFuncion(a,new LinkedList<>());:}
  | IDENTIFICADOR:a dimensiones:b               {:RESULT=new AccesoArreglo(a,b);:}
+ | expresion:a MAS MAS                         {:RESULT=new Operacion(a,Operacion.Tipo_operacion.MASAU);:}
+ | expresion:a MENOS MENOS                     {:RESULT=new Operacion(a,Operacion.Tipo_operacion.MENOSAU);:}
+
 ;
 
 instruccion_if_sup ::= 

@@ -37,7 +37,10 @@ public class Operacion implements Instruccion {
         OR,
         TRUE,
         FALSE,
-        CONCATENACION
+        CONCATENACION,
+        MASAU,
+        MENOSAU
+        
     }
     /**
      * Tipo de operación a ejecutar.
@@ -245,6 +248,21 @@ public class Operacion implements Instruccion {
             return new Boolean(false);
         } else if (tipo == Tipo_operacion.CONCATENACION) {
             return ((a == null) ? null : a.toString()) + ((b == null) ? null : b.toString());
+        } else if (tipo == Tipo_operacion.MASAU) {
+            if (a instanceof String) {
+                return (Double) a + 1;
+            } else {
+                System.err.println("Error de tipos, el aumento se debe hacerse entre números.");
+                return null;
+            }
+        } else if (tipo == Tipo_operacion.MENOSAU) {
+            if (a instanceof String) {
+                return (Double) a - 1;
+            } else {
+                System.err.println("Error de tipos, el decremento debe hacerse entre números.");
+                return null;
+            }
+
         } else {
             return null;
         }

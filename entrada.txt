@@ -1,4 +1,4 @@
-/******************************************
+﻿/******************************************
  * Ejemplo desarrollado por Erick Navarro *
  * Blog: e-navarro.blogspot.com           *
  * Julio - 2018                           *
@@ -6,6 +6,7 @@
  
 Declare Number a;
 Declare Number b;
+Declare Number p;
 
 Function Void main(){
 	Print("El resultado del void que retorna valor es: " & voidQueRetornaValor());
@@ -28,6 +29,9 @@ Function Void main(){
 	Print("Fibonacci de 13 es: " & fibonacci(13));
 	a=2;
 	b=3;
+	p=4;
+	p=p++;
+	Print("El valor p es: "&p);
 	Declare Number c[a][b];
 	c[a-1][b-2]=a+b;
 	c[0][0]=1;
